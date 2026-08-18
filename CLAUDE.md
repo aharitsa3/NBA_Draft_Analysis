@@ -35,6 +35,14 @@ This repo uses `gh` (GitHub CLI) for PRs. Remote: `aharitsa3/NBA_Draft_Analysis`
 
 Never push, create, or merge without explicit confirmation from the user each time.
 
+### Known push/PR gotchas
+
+- `git push` can fail with `RPC failed; HTTP 400 ... unexpected disconnect while reading sideband packet` on larger pushes. Retry with a bigger buffer as a one-off flag (don't change git config permanently):
+  ```
+  git -c http.postBuffer=524288000 -c http.version=HTTP/1.1 push ...
+  ```
+- If `gh pr create` fails with `The <branch> branch has no history in common with main`, local `main` and `origin/main` have diverged into unrelated histories (e.g. after a local repo restore/reinit). Confirm with the user before force-pushing `main` to reconcile — this rewrites remote history.
+
 ## Stack & running the pipeline
 
 Python 3.10+. Not an installable package — run everything from the repo root. Install deps with `pip install -r requirements.txt`. See `README.md` for full setup/usage detail; this section covers only what's easy to get wrong.
