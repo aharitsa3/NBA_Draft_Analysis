@@ -1,0 +1,29 @@
+NBA Draft Analysis — pipeline run summary
+Generated: 2026-08-13T17:58:55.249844+00:00
+
+== Phase 1: Identity Resolution ==
+  238 real picks, 2019-2022
+  bio matched: 204/238 (85.7%)
+  NCAA resolved: 194/238 (81.5%)
+  NBA resolved: 221/238 (92.9%)
+  join-resolution warnings logged: 70 (picks<->order) + 61 (box score) — see identity/*.parquet for details, never silently dropped
+
+== Phase 2: Feature Engineering ==
+  players with no NCAA season found: 1 -> ['Shaedon Sharpe']
+
+== Phase 3: Target Construction ==
+  projected_production_score computed: 185/238 (77.7%)
+
+== Phase 4: Model Training ==
+  selected model: random_forest
+  xgboost CV (out-of-fold): MAE=3.554 RMSE=4.554 rank_corr=0.026
+  random_forest CV (out-of-fold): MAE=3.398 RMSE=4.299 rank_corr=-0.002
+
+== Phase 5/6: Simulation & Grading ==
+  picks simulated: 238
+  mean rank differential: 10.18
+  mean value gap (PPS points): 2.64
+  team-year rollups graded: 110
+
+== Final output ==
+  processed_data/pipeline/final_report.parquet — 238 rows, 40 columns

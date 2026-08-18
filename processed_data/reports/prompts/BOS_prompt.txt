@@ -1,0 +1,155 @@
+You are writing a short draft-performance report for one NBA team, covering their 2019-2022 draft picks, based ONLY on the JSON data provided in the user message.
+
+Hard rules:
+- Every number you state (a score, a rank, a stat) must appear verbatim in the provided JSON. Do not calculate, estimate, extrapolate, average, or infer any number that is not already present in the data.
+- Never invent a player fact, outcome, or comparison not present in the data.
+- The projection metric must always be called "Projected Production Score" or "PPS" — never "VORP", even if you believe VORP is a similar or related concept.
+- If the data for a pick is missing or null (e.g. a player who never made the NBA), say so plainly rather than guessing why or filling in a number.
+- Write 3-4 short paragraphs: an overview of the team's draft-era performance across 2019-2022, a look at their strongest and weakest picks by value gap, and a one-line note on the year-over-year trend.
+- Plain prose, no headers, no bullet lists, no markdown.
+
+---
+
+Here is the JSON data for this team. Follow the rules above exactly.
+
+{
+  "team": "BOS",
+  "picks": [
+    {
+      "draft_year": 2019,
+      "pick": 14,
+      "player_selected": "Romeo Langford",
+      "predicted_pps": 4.17,
+      "actual_pps": 3.16,
+      "bpa_top_available_player": "Jordan Poole",
+      "bpa_top_available_predicted_pps": 9.14,
+      "rank_differential": 42.0,
+      "value_gap_pps_points": 4.96
+    },
+    {
+      "draft_year": 2019,
+      "pick": 20,
+      "player_selected": "Matisse Thybulle",
+      "predicted_pps": 5.13,
+      "actual_pps": 5.01,
+      "bpa_top_available_player": "Jordan Poole",
+      "bpa_top_available_predicted_pps": 9.14,
+      "rank_differential": 24.0,
+      "value_gap_pps_points": 4.01
+    },
+    {
+      "draft_year": 2019,
+      "pick": 22,
+      "player_selected": "Grant Williams",
+      "predicted_pps": 6.28,
+      "actual_pps": 4.65,
+      "bpa_top_available_player": "Jordan Poole",
+      "bpa_top_available_predicted_pps": 9.14,
+      "rank_differential": 13.0,
+      "value_gap_pps_points": 2.86
+    },
+    {
+      "draft_year": 2019,
+      "pick": 51,
+      "player_selected": "Tremont Waters",
+      "predicted_pps": 5.11,
+      "actual_pps": 2.57,
+      "bpa_top_available_player": "Jordan Bone",
+      "bpa_top_available_predicted_pps": 6.57,
+      "rank_differential": 4.0,
+      "value_gap_pps_points": 1.47
+    },
+    {
+      "draft_year": 2020,
+      "pick": 14,
+      "player_selected": "Aaron Nesmith",
+      "predicted_pps": 6.05,
+      "actual_pps": 4.33,
+      "bpa_top_available_player": "Desmond Bane",
+      "bpa_top_available_predicted_pps": 10.99,
+      "rank_differential": 23.0,
+      "value_gap_pps_points": 4.95
+    },
+    {
+      "draft_year": 2020,
+      "pick": 26,
+      "player_selected": "Payton Pritchard",
+      "predicted_pps": 5.59,
+      "actual_pps": 4.13,
+      "bpa_top_available_player": "Desmond Bane",
+      "bpa_top_available_predicted_pps": 10.99,
+      "rank_differential": 22.0,
+      "value_gap_pps_points": 5.41
+    },
+    {
+      "draft_year": 2020,
+      "pick": 30,
+      "player_selected": "Desmond Bane",
+      "predicted_pps": 10.99,
+      "actual_pps": 14.53,
+      "bpa_top_available_player": "Desmond Bane",
+      "bpa_top_available_predicted_pps": 10.99,
+      "rank_differential": 0.0,
+      "value_gap_pps_points": 0.0
+    },
+    {
+      "draft_year": 2020,
+      "pick": 47,
+      "player_selected": "Yam Madar",
+      "predicted_pps": 4.54,
+      "actual_pps": null,
+      "bpa_top_available_player": "Justinian Jessup",
+      "bpa_top_available_predicted_pps": 8.32,
+      "rank_differential": 12.0,
+      "value_gap_pps_points": 3.78
+    },
+    {
+      "draft_year": 2021,
+      "pick": 45,
+      "player_selected": "Juhann Begarin",
+      "predicted_pps": 8.89,
+      "actual_pps": null,
+      "bpa_top_available_player": "RaiQuan Gray",
+      "bpa_top_available_predicted_pps": 9.14,
+      "rank_differential": 1.0,
+      "value_gap_pps_points": 0.25
+    },
+    {
+      "draft_year": 2022,
+      "pick": 53,
+      "player_selected": "JD Davison",
+      "predicted_pps": 3.91,
+      "actual_pps": 1.62,
+      "bpa_top_available_player": "Yannick Nzosa",
+      "bpa_top_available_predicted_pps": 8.88,
+      "rank_differential": 3.0,
+      "value_gap_pps_points": 4.98
+    }
+  ],
+  "yearly_grades": [
+    {
+      "draft_year": 2019,
+      "n_picks": 4,
+      "headline_score": -0.94,
+      "grade_letter": "C+"
+    },
+    {
+      "draft_year": 2020,
+      "n_picks": 4,
+      "headline_score": -0.58,
+      "grade_letter": "C+"
+    },
+    {
+      "draft_year": 2021,
+      "n_picks": 1,
+      "headline_score": 1.44,
+      "grade_letter": "A"
+    },
+    {
+      "draft_year": 2022,
+      "n_picks": 1,
+      "headline_score": -0.33,
+      "grade_letter": "B-"
+    }
+  ]
+}

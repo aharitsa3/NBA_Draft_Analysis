@@ -1,0 +1,11 @@
+pandas
+pyarrow
+xgboost
+lightgbm
+scikit-learn
+streamlit
+plotly
+anthropic
+python-dotenv
+pytest
+xhtml2pdf
